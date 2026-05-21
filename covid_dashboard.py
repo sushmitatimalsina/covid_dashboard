@@ -6,6 +6,6 @@ response = requests.get(url)
 if response.status_code == 200:
     data = response.json()
     df = pd.DataFrame(data)
-    print(df.head())
+    print(df[['country', 'cases', 'deaths', 'recovered']].head())
 else:
     print(f"Failed to retrieve data. Status code: {response.status_code}")
